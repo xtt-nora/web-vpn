@@ -1,0 +1,66 @@
+.publicCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  justify-items: center;
+  align-content: space-between;
+  .el-card {
+    width: 260px;
+    height: 100%;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+  }
+  &-img {
+    width: 74px;
+    height: 74px;
+    padding: 10px;
+  }
+  &-right {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.time {
+  font-size: 12px;
+  color: #999;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 0;
+  min-height: auto;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 42px solid #a1ffce;
+  border-left: 70px solid transparent;
+  position: absolute;
+  right: 0;
+}
+.triangle-title {
+  width: 33px;
+  padding-top: 4px;
+  position: absolute;
+  right: 0;
+  font-size: 15px;
+  color: #757575;
+  transform: rotate(23deg);
+}

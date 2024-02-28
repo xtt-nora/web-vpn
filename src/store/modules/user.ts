@@ -1,30 +1,23 @@
 import { defineStore } from 'pinia'
-import { UserInfo } from '#/store'
+import { UserState } from '@/store/interface'
+import piniaPersistConfig from '@/store/helper/persist'
 
-interface State {
-  userInfo: UserInfo
-  token: string
-}
-
-const useUserStore = defineStore('userStore', {
-  state(): State {
-    return {
-      userInfo: {
-        userName: '',
-        userId: ''
-      },
-      token: ''
-    }
-  },
+export const useUserStore = defineStore({
+  id: 'web-user',
+  state: (): UserState => ({
+    token: '',
+    userInfo: { name: 'XTT' }
+  }),
+  getters: {},
   actions: {
-    /**
-     * 修改用户信息
-     * @param {UserInfo} userInfo 用户信息
-     */
-    changeUserName(userInfo: UserInfo) {
+    // Set Token
+    setToken(token: string) {
+      this.token = token
+    },
+    // Set setUserInfo
+    setUserInfo(userInfo: UserState['userInfo']) {
       this.userInfo = userInfo
     }
-  }
+  },
+  persist: piniaPersistConfig('web-user')
 })
-
-export default useUserStore
